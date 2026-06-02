@@ -1,18 +1,30 @@
-# kingjinsight-skills
+<div align="center">
 
-Each skill is a self-contained folder with a `SKILL.md` (and optional `scripts/`, `assets/`, `references/`), following the [Agent Skills](https://agentskills.io) open standard. Works with Claude Code, Codex, OpenCode, and other agents. The agent auto-loads a skill when your request matches its trigger description — no manual invocation needed.
+# 🧰 kingjinsight-skills
 
-## Skills
+Personal AI skills I actually use — open-sourced here.
+
+![License](https://img.shields.io/badge/LICENSE-MIT-3081F7)
+![Skills](https://img.shields.io/badge/SKILLS-1-2ea44f)
+![AgentSkills](https://img.shields.io/badge/AGENTSKILLS-STANDARD-8957e5)
+
+![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757?logo=anthropic&logoColor=white)
+![Codex](https://img.shields.io/badge/Codex-Skill-412991?logo=openai&logoColor=white)
+![OpenCode](https://img.shields.io/badge/OpenCode-Skill-FB923C)
+
+</div>
+
+Each skill is a self-contained folder with a `SKILL.md` (and optional `scripts/`, `assets/`, `references/`), following the [Agent Skills](https://agentskills.io) open standard. It works with Claude Code, Codex, OpenCode, and other agents. The agent auto-loads a skill when your request matches its trigger description — no manual invocation needed.
+
+## 📋 Skills
 
 | Skill | What it does | Platform | Trigger examples |
 |---|---|---|---|
 | [storage-analyzer](storage-analyzer/) | Read-only disk analysis → tiered cleanup report (🟢/🟡/🔴) → interactive HTML with one-click move-to-trash | Linux / Arch (btrfs-aware) | "磁盘满了", "清理空间", "storage analysis", "disk cleanup" |
 
-## Install
+## 📦 Install
 
 Just tell your coding agent (Claude Code / Codex / OpenCode / …) to install it — paste the skill's link:
-
-> 帮我安装这个 skill：https://github.com/Kingjinsight/kingjinsight-skills/tree/main/\<skill>
 
 > Install this skill for me: https://github.com/Kingjinsight/kingjinsight-skills/tree/main/\<skill>
 
@@ -48,7 +60,7 @@ python3 scripts/server.py /tmp/storage_analysis.json  # interactive report + tra
 
 **Safety model**
 - Scan is strictly read-only.
-- Web server binds `127.0.0.1` + random port + per-session token; validates the `Host` header (anti DNS-rebind); every path is realpath-resolved and must be in the allowlist **and** under `$HOME`.
+- The web server binds `127.0.0.1` + random port + per-session token; validates the `Host` header (anti DNS-rebind); every path is realpath-resolved and must be in the allowlist **and** under `$HOME`.
 - Trash only — uses `gio trash` (recoverable from the file manager). There is no permanent-delete button by design.
 
 **Dependencies:** Python 3 standard library only. Runtime needs `du`, `findmnt`, `uname`; trash/open need `gio` and `xdg-open`. `compsize` / `paccache` are optional enhancers.
