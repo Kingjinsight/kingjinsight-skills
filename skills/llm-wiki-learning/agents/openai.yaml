@@ -1,0 +1,4 @@
+interface:
+  display_name: "LLM Wiki Learning"
+  short_description: "Update LLM knowledge in Obsidian"
+  default_prompt: "Use $llm-wiki-learning to write or update durable LLM notes in my Obsidian vault."

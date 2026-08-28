@@ -1,0 +1,5 @@
+interface:
+  display_name: "King 手绘正文配图"
+  short_description: "用固定人物 IP 生成极简、直接、略带荒诞感的中文正文配图"
+  brand_color: "#2E486E"
+  default_prompt: "使用 $king-handdrawn-illustrations 为这篇中文文章规划并生成一组手绘正文配图。"
